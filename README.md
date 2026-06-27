@@ -1,6 +1,6 @@
-# Strix Halo DS4 Docker
+# Run DS4 on Strix Halo (Docker)
 
-[![Docker Build & Publish](https://github.com/openmtx/strix-halo-ds4-docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/openmtx/strix-halo-ds4-docker/actions/workflows/docker-publish.yml)
+[![Docker Build & Publish](https://github.com/openmtx/docker-ds4-strix-halo/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/openmtx/docker-ds4-strix-halo/actions/workflows/docker-publish.yml)
 
 Multi-stage Docker build for [antirez/ds4](https://github.com/antirez/ds4) with ROCm GPU acceleration, optimised for **AMD Strix Halo APUs** (Radeon 8060S / gfx1151).
 
@@ -150,6 +150,6 @@ We ran a limited evaluation suite against the live server, and the **2-bit (IQ2X
 
 This project is licensed under the [MIT License](LICENSE).
 
-[![License: MIT](https://img.shields.io/github/license/openmtx/strix-halo-ds4-docker)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/openmtx/docker-ds4-strix-halo)](LICENSE)
 
 The bundled `ds4` source (git submodule) retains its own [MIT License](https://github.com/antirez/ds4/blob/main/LICENSE) — see `ds4/LICENSE`.
