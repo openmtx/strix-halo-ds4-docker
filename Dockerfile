@@ -4,13 +4,13 @@
 FROM rocm/dev-ubuntu-24.04:7.2.4-complete AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y git build-essential && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
 
 ENV PATH="${PATH}:/opt/rocm/bin"
 ENV ROCM_PATH="/opt/rocm"
 
 WORKDIR /build
-RUN git clone https://github.com/antirez/ds4.git .
+COPY ds4/ .
 RUN make rocm -j"$(nproc)"
 
 # ==========================================
@@ -25,7 +25,6 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     curl \
     gnupg \
-    numactl \
     && rm -rf /var/lib/apt/lists/*
 
 # Add the AMD repo to fetch just the tiny core runtime libraries (no compiler)
@@ -53,7 +52,6 @@ RUN apt-get update && apt-get install -y \
 # Set up paths and hardware compliance variables
 ENV PATH="${PATH}:/opt/rocm/bin"
 ENV LD_LIBRARY_PATH="/opt/rocm/lib"
-ENV HSA_OVERRIDE_GFX_VERSION=11.5.1
 
 # Rename the default ubuntu user (UID/GID 1000) to ds4
 RUN usermod -d /app -s /bin/bash -l ds4 ubuntu && \

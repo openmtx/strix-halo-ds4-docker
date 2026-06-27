@@ -5,14 +5,24 @@ services:
       dockerfile: Dockerfile
     image: local/ds4:latest
     privileged: true
-    command: ds4-server --rocm -m /app/models/DeepSeek-V4-Flash-IQ2XXS-w2Q2K-AProjQ8-SExpQ8-OutQ8-chat-v2-imatrix.gguf --ctx 262144 --host 0.0.0.0 --port 8000
+    command: >
+      ds4-server --rocm
+      -m /app/models/DeepSeek-V4-Flash-IQ2XXS-w2Q2K-AProjQ8-SExpQ8-OutQ8-chat-v2-imatrix.gguf
+      --ctx 131072
+      --prefill-chunk 4096
+      --host 0.0.0.0
+      --port 8000
     ports:
       - "8000:8000"
-    shm_size: 80gb
-    environment:
-      - HSA_XNACK=1
     volumes:
-      - ./models:/app/models
+      - ./models:/app/models:ro
     devices:
       - /dev/kfd
       - /dev/dri
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/v1/models"]
+      interval: 15s
+      timeout: 5s
+      retries: 40
+      start_period: 10m
