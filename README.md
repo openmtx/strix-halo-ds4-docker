@@ -4,12 +4,21 @@ Multi-stage Docker build for [antirez/ds4](https://github.com/antirez/ds4) with 
 
 This repo uses a **pinned git submodule** to track the ds4 source. Updating the submodule to a specific commit triggers a rebuild via your CI/CD workflow.
 
+## Why Docker?
+
+gfx1151 (Radeon 8060S) is recent enough that **the host distribution's ROCm may lag, mis-detect the part, or not be packaged at all** for your distro — and a flaky host-side ROCm stack is a painful thing to debug on bleeding-edge silicon. This setup sidesteps the host entirely:
+
+- **Build stage** compiles ds4 inside a pinned `rocm/dev-ubuntu-24.04:7.2.4-complete` image — you choose the ROCm version known to support gfx1151, regardless of what's installed on the host.
+- **Runtime stage** is plain `ubuntu:24.04`, pulling in only the lightweight HIP execution libraries (`hip-runtime-amd`, `hipblas`, `hipblaslt`) from AMD's apt repo. No compiler, no full ROCm stack in the deployed image.
+
+There is **no host-side ROCm userspace to install or fight with** — the entire ROCm stack lives inside the container, fully under your control. The host only needs a working kernel and `amdgpu` driver exposing `/dev/kfd` and `/dev/dri`, plus the one-time GTT tuning described below.
+
 ---
 
 ## Prerequisites
 
-- Docker with `nvidia-container-toolkit` **not needed** — uses native `/dev/kfd` and `/dev/dri`
-- ROCm-compatible GPU (gfx1151 tested on Strix Halo)
+- Docker (no `nvidia-container-toolkit` required — passes native `/dev/kfd` and `/dev/dri` through to the container)
+- An AMD GPU supported by the ROCm build image (gfx1151 / Radeon 8060S tested)
 - ~124 GiB GTT — requires kernel cmdline tuning (see below)
 - 128 GB system RAM recommended
 
@@ -38,6 +47,16 @@ cat /sys/module/amdgpu/parameters/gttsize
 On systems with >=128 GiB RAM, this allocates ~124 GiB of GTT for GPU memory,
 enough to cache the full model (~81 GiB) plus a large KV context.
 
+## Clone
+
+This repo vendors [antirez/ds4](https://github.com/antirez/ds4) as a **git submodule**, so clone it recursively (or init the submodule in an existing checkout) — otherwise the build copies an empty `ds4/` directory and fails:
+
+```sh
+git clone --recursive <this-repo-url> dwarf-star
+# or, in an existing checkout:
+git submodule update --init --recursive
+```
+
 ## Model Download
 
 ```sh
@@ -53,9 +72,11 @@ uv tool run --from huggingface-hub hf download \
 docker compose build
 ```
 
-The build copies source from the local `ds4/` submodule rather than cloning
-from GitHub at runtime. This makes the build **deterministic** — you always get
-the exact commit pinned in the submodule.
+This compiles `ds4` against the full ROCm toolchain in the build stage, so the
+first build can take several minutes; subsequent builds are cached. Source is
+copied from the local `ds4/` submodule (rather than cloned at build time), which
+makes the build **deterministic** — you always get the exact commit pinned in
+the submodule.
 
 ### Updating the submodule
 
@@ -87,9 +108,23 @@ Edit `docker-compose.yml` to adjust:
 
 ## Test
 
+Functional smoke test:
+
 ```sh
 uv run --with openai python3 tests/test_api.py
 ```
+
+Quantization stress test (52 probes across factual recall, hallucination resistance, math, reasoning, code, and determinism):
+
+```sh
+uv run --with openai python3 tests/test_quant_quality.py
+```
+
+Throughput benchmarks (`bench_prefill.py`, `bench_xnack.py`) and the tool-delegation experiment (`tool_delegation_experiment.py`) live alongside these.
+
+## Evaluation
+
+We ran a limited evaluation suite against the live server, and the **2-bit (IQ2XXS) quantized DeepSeek-V4-Flash performs surprisingly well on this 128 GB Strix Halo machine** — strong on factual recall, hallucination resistance, instruction-following, and executed code generation, with measured prefill around ~260 tok/s and decode around ~16 tok/s. A full writeup covering the evaluation methodology, results, and a tool-based "compensation" experiment is forthcoming as a blog post; a link will be added here once it's published.
 
 ## Notes
 
@@ -106,5 +141,5 @@ uv run --with openai python3 tests/test_api.py
 ├── docker-compose.yml  # Service definition
 ├── ds4/                # Git submodule (pinned source)
 ├── models/             # Downloaded GGUF models (gitignored)
-└── tests/              # Benchmark and quality tests
+└── tests/              # Functional tests, benchmarks, and eval probes
 ```
