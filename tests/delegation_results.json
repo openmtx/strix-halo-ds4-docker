@@ -1,0 +1,869 @@
+[
+  {
+    "difficulty": "trivial",
+    "prompt": "What is 2 + 2?",
+    "expected": 4,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 + 2 = 4",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "trivial",
+    "prompt": "What is 7 times 8?",
+    "expected": 56,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 times 8 is 56.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 times 8 is 56.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 times 8 is 56.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 * 8 = 56.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 * 8 = 56.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "7 * 8 = 56.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "trivial",
+    "prompt": "What is 100 minus 37?",
+    "expected": 63,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 equals 63.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 equals 63.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 equals 63.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 is 63.\n\n\\[\n100 - 37 = 63\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 is 63.\n\n\\[\n100 - 37 = 63\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "100 minus 37 is 63.\n\n\\[\n100 - 37 = 63\n\\]",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "trivial",
+    "prompt": "What is 144 divided by 12?",
+    "expected": 12,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 equals 12.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 equals 12.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 equals 12.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 is 12.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 is 12.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "144 divided by 12 is 12.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "medium",
+    "prompt": "What is 17 times 23?",
+    "expected": 391,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "Okay, let's calculate 17 times 23 step by step.\n\nWe can break it down:\n- 17 \u00d7 20 = 340  \n- 17 \u00d7 3 = 51  \n\nThen add them together:  \n340 + 51 = 391\n\nSo, 17 times 23 is **391**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "Okay, let's calculate 17 times 23 step by step.\n\nWe can break it down:\n- 17 \u00d7 20 = 340  \n- 17 \u00d7 3 = 51  \n\nThen add them together:  \n340 + 51 = 391\n\nSo, 17 times 23 is **391**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "Okay, let's calculate 17 times 23 step by step.\n\nWe can break it down:\n- 17 \u00d7 20 = 340  \n- 17 \u00d7 3 = 51  \n\nThen add them together:  \n340 + 51 = 391\n\nSo, 17 times 23 is **391**.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "17 times 23 equals **391**.",
+        "expr": "17 * 23",
+        "tool_result": "391"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "17 times 23 equals **391**.",
+        "expr": "17 * 23",
+        "tool_result": "391"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "17 times 23 equals **391**.",
+        "expr": "17 * 23",
+        "tool_result": "391"
+      }
+    ]
+  },
+  {
+    "difficulty": "medium",
+    "prompt": "What is 25 times 25?",
+    "expected": 625,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 times 25 is 625.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 times 25 is 625.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 times 25 is 625.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 * 25 = 625.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 * 25 = 625.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "25 * 25 = 625.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "medium",
+    "prompt": "What is 15 percent of 240?",
+    "expected": 36,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can find 15% of 240 by calculating \\(\\frac{15}{100} \\times 240\\).\n\n\\[\n\\frac{15}{100} \\times 240 = 0.15 \\times 240 = 36\n\\]\n\nAlternatively, you can find 10% (which is 24) and 5% (which is 12), then add them together: \\(24 + 12 = 36\\).\n\nSo, 15 percent of 240 is **36**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can find 15% of 240 by calculating \\(\\frac{15}{100} \\times 240\\).\n\n\\[\n\\frac{15}{100} \\times 240 = 0.15 \\times 240 = 36\n\\]\n\nAlternatively, you can find 10% (which is 24) and 5% (which is 12), then add them together: \\(24 + 12 = 36\\).\n\nSo, 15 percent of 240 is **36**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can find 15% of 240 by calculating \\(\\frac{15}{100} \\times 240\\).\n\n\\[\n\\frac{15}{100} \\times 240 = 0.15 \\times 240 = 36\n\\]\n\nAlternatively, you can find 10% (which is 24) and 5% (which is 12), then add them together: \\(24 + 12 = 36\\).\n\nSo, 15 percent of 240 is **36**.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "15 percent of 240 is 36.\n\nWe can calculate this as: \\(0.15 \\times 240 = 36\\).",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "15 percent of 240 is 36.\n\nWe can calculate this as: \\(0.15 \\times 240 = 36\\).",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "15 percent of 240 is 36.\n\nWe can calculate this as: \\(0.15 \\times 240 = 36\\).",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "medium",
+    "prompt": "What is 2 to the power of 10?",
+    "expected": 1024,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "2 to the power of 10 is 1024.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 347 times 892?",
+    "expected": 309524,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 347 \u00d7 892 step by step.\n\n\\[\n347 \\times 892 = 347 \\times (900 - 8)\n\\]\n\n\\[\n347 \\times 900 = 347 \\times 9 \\times 100 = 3123 \\times 100 = 312300\n\\]\n\n\\[\n347 \\times 8 = 2776\n\\]\n\n\\[\n312300 - 2776 = 309524\n\\]\n\nAlternatively, directly:\n\n\\[\n347 \\times 892 = 347 \\times (800 + 90 + 2)\n\\]\n\\[\n347 \\times 800 = 277600\n\\]\n\\[\n347 \\times 90 = 31230\n\\]\n\\[\n347 \\times 2 = 694\n\\]\n\\[\n277600 + 31230 = 308830\n\\]\n\\[\n308830 + 694 = 309524\n\\]\n\nSo, the result is:\n\n\\[\n\\boxed{309524",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 347 \u00d7 892 step by step.\n\n\\[\n347 \\times 892 = 347 \\times (900 - 8)\n\\]\n\n\\[\n347 \\times 900 = 347 \\times 9 \\times 100 = 3123 \\times 100 = 312300\n\\]\n\n\\[\n347 \\times 8 = 2776\n\\]\n\n\\[\n312300 - 2776 = 309524\n\\]\n\nAlternatively, directly:\n\n\\[\n347 \\times 892 = 347 \\times (800 + 90 + 2)\n\\]\n\\[\n347 \\times 800 = 277600\n\\]\n\\[\n347 \\times 90 = 31230\n\\]\n\\[\n347 \\times 2 = 694\n\\]\n\\[\n277600 + 31230 = 308830\n\\]\n\\[\n308830 + 694 = 309524\n\\]\n\nSo, the result is:\n\n\\[\n\\boxed{309524",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 347 \u00d7 892 step by step.\n\n\\[\n347 \\times 892 = 347 \\times (900 - 8)\n\\]\n\n\\[\n347 \\times 900 = 347 \\times 9 \\times 100 = 3123 \\times 100 = 312300\n\\]\n\n\\[\n347 \\times 8 = 2776\n\\]\n\n\\[\n312300 - 2776 = 309524\n\\]\n\nAlternatively, directly:\n\n\\[\n347 \\times 892 = 347 \\times (800 + 90 + 2)\n\\]\n\\[\n347 \\times 800 = 277600\n\\]\n\\[\n347 \\times 90 = 31230\n\\]\n\\[\n347 \\times 2 = 694\n\\]\n\\[\n277600 + 31230 = 308830\n\\]\n\\[\n308830 + 694 = 309524\n\\]\n\nSo, the result is:\n\n\\[\n\\boxed{309524",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "347 times 892 equals **309,524**.",
+        "expr": "347 * 892",
+        "tool_result": "309524"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "347 times 892 equals **309,524**.",
+        "expr": "347 * 892",
+        "tool_result": "309524"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "347 times 892 equals **309,524**.",
+        "expr": "347 * 892",
+        "tool_result": "309524"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 1234 times 5678?",
+    "expected": 7006652,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 1234 \u00d7 5678 step by step.\n\n\\[\n1234 \\times 5678 = 1234 \\times (5000 + 600 + 70 + 8)\n\\]\n\n\\[\n= 1234 \\times 5000 + 1234 \\times 600 + 1234 \\times 70 + 1234 \\times 8\n\\]\n\n\\[\n= 6,170,000 + 740,400 + 86,380 + 9,872\n\\]\n\nNow add them:\n\n\\[\n6,170,000 + 740,400 = 6,910,400\n\\]\n\\[\n6,910,400 + 86,380 = 6,996,780\n\\]\n\\[\n6,996,780 + 9,872 = 7,006,652\n\\]\n\nSo:\n\n\\[\n\\boxed{7006652}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 1234 \u00d7 5678 step by step.\n\n\\[\n1234 \\times 5678 = 1234 \\times (5000 + 600 + 70 + 8)\n\\]\n\n\\[\n= 1234 \\times 5000 + 1234 \\times 600 + 1234 \\times 70 + 1234 \\times 8\n\\]\n\n\\[\n= 6,170,000 + 740,400 + 86,380 + 9,872\n\\]\n\nNow add them:\n\n\\[\n6,170,000 + 740,400 = 6,910,400\n\\]\n\\[\n6,910,400 + 86,380 = 6,996,780\n\\]\n\\[\n6,996,780 + 9,872 = 7,006,652\n\\]\n\nSo:\n\n\\[\n\\boxed{7006652}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 1234 \u00d7 5678 step by step.\n\n\\[\n1234 \\times 5678 = 1234 \\times (5000 + 600 + 70 + 8)\n\\]\n\n\\[\n= 1234 \\times 5000 + 1234 \\times 600 + 1234 \\times 70 + 1234 \\times 8\n\\]\n\n\\[\n= 6,170,000 + 740,400 + 86,380 + 9,872\n\\]\n\nNow add them:\n\n\\[\n6,170,000 + 740,400 = 6,910,400\n\\]\n\\[\n6,910,400 + 86,380 = 6,996,780\n\\]\n\\[\n6,996,780 + 9,872 = 7,006,652\n\\]\n\nSo:\n\n\\[\n\\boxed{7006652}\n\\]",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "1234 times 5678 equals **7,006,652**.",
+        "expr": "1234 * 5678",
+        "tool_result": "7006652"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "1234 times 5678 equals **7,006,652**.",
+        "expr": "1234 * 5678",
+        "tool_result": "7006652"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "1234 times 5678 equals **7,006,652**.",
+        "expr": "1234 * 5678",
+        "tool_result": "7006652"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 99 to the power of 3?",
+    "expected": 970299,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We need to calculate \\(99^3\\).  \nOne way is to think of it as \\((100 - 1)^3\\) and use the binomial expansion:\n\n\\[\n(100 - 1)^3 = 100^3 - 3 \\times 100^2 \\times 1 + 3 \\times 100 \\times 1^2 - 1^3\n\\]\n\nThat gives:\n\n\\[\n1,000,000 - 3 \\times 10,000 + 3 \\times 100 - 1\n\\]\n\n\\[\n= 1,000,000 - 30,000 + 300 - 1\n\\]\n\n\\[\n= 970,299\n\\]\n\nAlternatively, directly multiplying:  \n\\(99 \\times 99 = 9,801\\), then \\(9,801 \\times 99 = 970,299\\).\n\nSo the answer is:\n\n\\[\n\\boxed{970299}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We need to calculate \\(99^3\\).  \nOne way is to think of it as \\((100 - 1)^3\\) and use the binomial expansion:\n\n\\[\n(100 - 1)^3 = 100^3 - 3 \\times 100^2 \\times 1 + 3 \\times 100 \\times 1^2 - 1^3\n\\]\n\nThat gives:\n\n\\[\n1,000,000 - 3 \\times 10,000 + 3 \\times 100 - 1\n\\]\n\n\\[\n= 1,000,000 - 30,000 + 300 - 1\n\\]\n\n\\[\n= 970,299\n\\]\n\nAlternatively, directly multiplying:  \n\\(99 \\times 99 = 9,801\\), then \\(9,801 \\times 99 = 970,299\\).\n\nSo the answer is:\n\n\\[\n\\boxed{970299}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We need to calculate \\(99^3\\).  \nOne way is to think of it as \\((100 - 1)^3\\) and use the binomial expansion:\n\n\\[\n(100 - 1)^3 = 100^3 - 3 \\times 100^2 \\times 1 + 3 \\times 100 \\times 1^2 - 1^3\n\\]\n\nThat gives:\n\n\\[\n1,000,000 - 3 \\times 10,000 + 3 \\times 100 - 1\n\\]\n\n\\[\n= 1,000,000 - 30,000 + 300 - 1\n\\]\n\n\\[\n= 970,299\n\\]\n\nAlternatively, directly multiplying:  \n\\(99 \\times 99 = 9,801\\), then \\(9,801 \\times 99 = 970,299\\).\n\nSo the answer is:\n\n\\[\n\\boxed{970299}\n\\]",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "99 to the power of 3 (99\u00b3) equals **970,299**.",
+        "expr": "99 ** 3",
+        "tool_result": "970299"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "99 to the power of 3 (99\u00b3) equals **970,299**.",
+        "expr": "99 ** 3",
+        "tool_result": "970299"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "99 to the power of 3 (99\u00b3) equals **970,299**.",
+        "expr": "99 ** 3",
+        "tool_result": "970299"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 13 factorial?",
+    "expected": 6227020800,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": false,
+        "text": "13 factorial, written as 13! (with the exclamation mark), is the product of all positive integers from 1 down to 13.\n\nThe calculation is:\n\n13! = 13 \u00d7 12 \u00d7 11 \u00d7 10 \u00d7 9 \u00d7 8 \u00d7 7 \u00d7 6 \u00d7 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1\n\nLet's break it down step by step:\n\n- 13 \u00d7 12 = 156\n- 156 \u00d7 11 = 1,716\n- 1,716 \u00d7 10 = 17,160\n- 17,160 \u00d7 9 = 154,440\n- 154,440 \u00d7 8 = 1,235,520\n- 1,235,520 \u00d7 7 = 8,648,640\n- 8,648,640 \u00d7 6 = 51,891,840\n- 51,891,840 \u00d7 5 = 259",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": false,
+        "text": "13 factorial, written as 13! (with the exclamation mark), is the product of all positive integers from 1 down to 13.\n\nThe calculation is:\n\n13! = 13 \u00d7 12 \u00d7 11 \u00d7 10 \u00d7 9 \u00d7 8 \u00d7 7 \u00d7 6 \u00d7 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1\n\nLet's break it down step by step:\n\n- 13 \u00d7 12 = 156\n- 156 \u00d7 11 = 1,716\n- 1,716 \u00d7 10 = 17,160\n- 17,160 \u00d7 9 = 154,440\n- 154,440 \u00d7 8 = 1,235,520\n- 1,235,520 \u00d7 7 = 8,648,640\n- 8,648,640 \u00d7 6 = 51,891,840\n- 51,891,840 \u00d7 5 = 259",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": false,
+        "text": "13 factorial, written as 13! (with the exclamation mark), is the product of all positive integers from 1 down to 13.\n\nThe calculation is:\n\n13! = 13 \u00d7 12 \u00d7 11 \u00d7 10 \u00d7 9 \u00d7 8 \u00d7 7 \u00d7 6 \u00d7 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1\n\nLet's break it down step by step:\n\n- 13 \u00d7 12 = 156\n- 156 \u00d7 11 = 1,716\n- 1,716 \u00d7 10 = 17,160\n- 17,160 \u00d7 9 = 154,440\n- 154,440 \u00d7 8 = 1,235,520\n- 1,235,520 \u00d7 7 = 8,648,640\n- 8,648,640 \u00d7 6 = 51,891,840\n- 51,891,840 \u00d7 5 = 259",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "13 factorial (13!) equals **6,227,020,800**.",
+        "expr": "13!",
+        "tool_result": "6227020800"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "13 factorial (13!) equals **6,227,020,800**.",
+        "expr": "13!",
+        "tool_result": "6227020800"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "13 factorial (13!) equals **6,227,020,800**.",
+        "expr": "13!",
+        "tool_result": "6227020800"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 20 factorial?",
+    "expected": 2432902008176640000,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The factorial of 20, written as **20!**, is the product of all positive integers from 1 down to 20.\n\n20! = 20 \u00d7 19 \u00d7 18 \u00d7 ... \u00d7 3 \u00d7 2 \u00d7 1\n\nThe exact value is:\n\n**2,432,902,008,176,640,000**\n\n*(That's approximately 2.43 quintillion)*",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The factorial of 20, written as **20!**, is the product of all positive integers from 1 down to 20.\n\n20! = 20 \u00d7 19 \u00d7 18 \u00d7 ... \u00d7 3 \u00d7 2 \u00d7 1\n\nThe exact value is:\n\n**2,432,902,008,176,640,000**\n\n*(That's approximately 2.43 quintillion)*",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The factorial of 20, written as **20!**, is the product of all positive integers from 1 down to 20.\n\n20! = 20 \u00d7 19 \u00d7 18 \u00d7 ... \u00d7 3 \u00d7 2 \u00d7 1\n\nThe exact value is:\n\n**2,432,902,008,176,640,000**\n\n*(That's approximately 2.43 quintillion)*",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "20 factorial (20!) equals **2,432,902,008,176,640,000** (approximately \\(2.43 \\times 10^{18}\\)).",
+        "expr": "20!",
+        "tool_result": "2432902008176640000"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "20 factorial (20!) equals **2,432,902,008,176,640,000** (approximately \\(2.43 \\times 10^{18}\\)).",
+        "expr": "20!",
+        "tool_result": "2432902008176640000"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "20 factorial (20!) equals **2,432,902,008,176,640,000** (approximately \\(2.43 \\times 10^{18}\\)).",
+        "expr": "20!",
+        "tool_result": "2432902008176640000"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 783 times 459?",
+    "expected": 359397,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 783 \u00d7 459 step by step.\n\n\\[\n783 \\times 459 = 783 \\times (400 + 50 + 9)\n\\]\n\nFirst, \\(783 \\times 400 = 783 \\times 4 \\times 100 = 3132 \\times 100 = 313,200\\).\n\nSecond, \\(783 \\times 50 = 783 \\times 5 \\times 10 = 3915 \\times 10 = 39,150\\).\n\nThird, \\(783 \\times 9 = 7047\\).\n\nNow add them:\n\n\\[\n313,200 + 39,150 = 352,350\n\\]\n\\[\n352,350 + 7,047 = 359,397\n\\]\n\nTherefore, \\(783 \\times 459 = 359,397\\).\n\n\\[\n\\boxed{359397}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 783 \u00d7 459 step by step.\n\n\\[\n783 \\times 459 = 783 \\times (400 + 50 + 9)\n\\]\n\nFirst, \\(783 \\times 400 = 783 \\times 4 \\times 100 = 3132 \\times 100 = 313,200\\).\n\nSecond, \\(783 \\times 50 = 783 \\times 5 \\times 10 = 3915 \\times 10 = 39,150\\).\n\nThird, \\(783 \\times 9 = 7047\\).\n\nNow add them:\n\n\\[\n313,200 + 39,150 = 352,350\n\\]\n\\[\n352,350 + 7,047 = 359,397\n\\]\n\nTherefore, \\(783 \\times 459 = 359,397\\).\n\n\\[\n\\boxed{359397}\n\\]",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "We can calculate 783 \u00d7 459 step by step.\n\n\\[\n783 \\times 459 = 783 \\times (400 + 50 + 9)\n\\]\n\nFirst, \\(783 \\times 400 = 783 \\times 4 \\times 100 = 3132 \\times 100 = 313,200\\).\n\nSecond, \\(783 \\times 50 = 783 \\times 5 \\times 10 = 3915 \\times 10 = 39,150\\).\n\nThird, \\(783 \\times 9 = 7047\\).\n\nNow add them:\n\n\\[\n313,200 + 39,150 = 352,350\n\\]\n\\[\n352,350 + 7,047 = 359,397\n\\]\n\nTherefore, \\(783 \\times 459 = 359,397\\).\n\n\\[\n\\boxed{359397}\n\\]",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "783 times 459 equals **359,397**.",
+        "expr": "783 * 459",
+        "tool_result": "359397"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "783 times 459 equals **359,397**.",
+        "expr": "783 * 459",
+        "tool_result": "359397"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "783 times 459 equals **359,397**.",
+        "expr": "783 * 459",
+        "tool_result": "359397"
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "prompt": "What is 56 times 56 times 56?",
+    "expected": 175616,
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "56 times 56 times 56 is \\( 56^3 \\).\n\nWe can calculate \\( 56^3 \\) step by step:\n\nFirst, \\( 56 \\times 56 = 3136 \\).  \nThen, \\( 3136 \\times 56 \\).\n\n\\[\n3136 \\times 50 = 156800\n\\]\n\\[\n3136 \\times 6 = 18816\n\\]\n\\[\n156800 + 18816 = 175616\n\\]\n\nSo, \\( 56^3 = 175616 \\).\n\nThus, 56 times 56 times 56 equals **175,616**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "56 times 56 times 56 is \\( 56^3 \\).\n\nWe can calculate \\( 56^3 \\) step by step:\n\nFirst, \\( 56 \\times 56 = 3136 \\).  \nThen, \\( 3136 \\times 56 \\).\n\n\\[\n3136 \\times 50 = 156800\n\\]\n\\[\n3136 \\times 6 = 18816\n\\]\n\\[\n156800 + 18816 = 175616\n\\]\n\nSo, \\( 56^3 = 175616 \\).\n\nThus, 56 times 56 times 56 equals **175,616**.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "56 times 56 times 56 is \\( 56^3 \\).\n\nWe can calculate \\( 56^3 \\) step by step:\n\nFirst, \\( 56 \\times 56 = 3136 \\).  \nThen, \\( 3136 \\times 56 \\).\n\n\\[\n3136 \\times 50 = 156800\n\\]\n\\[\n3136 \\times 6 = 18816\n\\]\n\\[\n156800 + 18816 = 175616\n\\]\n\nSo, \\( 56^3 = 175616 \\).\n\nThus, 56 times 56 times 56 equals **175,616**.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "56 times 56 times 56 equals **175,616**.",
+        "expr": "56 * 56 * 56",
+        "tool_result": "175616"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "56 times 56 times 56 equals **175,616**.",
+        "expr": "56 * 56 * 56",
+        "tool_result": "175616"
+      },
+      {
+        "mode": "delegated",
+        "correct": true,
+        "text": "56 times 56 times 56 equals **175,616**.",
+        "expr": "56 * 56 * 56",
+        "tool_result": "175616"
+      }
+    ]
+  },
+  {
+    "difficulty": "distractor",
+    "prompt": "What is the capital of France?",
+    "expected": "paris",
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The capital of France is Paris.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  },
+  {
+    "difficulty": "distractor",
+    "prompt": "Who wrote the play Hamlet?",
+    "expected": "shakespeare",
+    "baseline": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The play *Hamlet* was written by **William Shakespeare**.\n\nIt is believed to have been composed between 1599 and 1601, and it is one of Shakespeare's most famous tragedies.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The play *Hamlet* was written by **William Shakespeare**.\n\nIt is believed to have been composed between 1599 and 1601, and it is one of Shakespeare's most famous tragedies.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "The play *Hamlet* was written by **William Shakespeare**.\n\nIt is believed to have been composed between 1599 and 1601, and it is one of Shakespeare's most famous tragedies.",
+        "expr": null,
+        "tool_result": null
+      }
+    ],
+    "with_tool": [
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "William Shakespeare wrote the play *Hamlet*.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "William Shakespeare wrote the play *Hamlet*.",
+        "expr": null,
+        "tool_result": null
+      },
+      {
+        "mode": "direct",
+        "correct": true,
+        "text": "William Shakespeare wrote the play *Hamlet*.",
+        "expr": null,
+        "tool_result": null
+      }
+    ]
+  }
+]
