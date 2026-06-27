@@ -1,13 +1,15 @@
-# ds4 ROCm Server
+# Strix Halo DS4 Docker
 
-Multi-stage Docker setup for [antirez/ds4](https://github.com/antirez/ds4) with ROCm GPU acceleration on Strix Halo / AMD APUs.
+Multi-stage Docker build for [antirez/ds4](https://github.com/antirez/ds4) with ROCm GPU acceleration, optimised for **AMD Strix Halo APUs** (Radeon 8060S / gfx1151).
 
-Tested on: **Ubuntu 26.04**, kernel **7.0.0-22-generic**, AMD Radeon 8060S (gfx1151), **128 GB RAM**.
+This repo uses a **pinned git submodule** to track the ds4 source. Updating the submodule to a specific commit triggers a rebuild via your CI/CD workflow.
+
+---
 
 ## Prerequisites
 
-- Docker with `nvidia-container-toolkit` not needed — uses native `/dev/kfd` and `/dev/dri`
-- ROCm-compatible GPU (gfx1151 tested)
+- Docker with `nvidia-container-toolkit` **not needed** — uses native `/dev/kfd` and `/dev/dri`
+- ROCm-compatible GPU (gfx1151 tested on Strix Halo)
 - ~124 GiB GTT — requires kernel cmdline tuning (see below)
 - 128 GB system RAM recommended
 
@@ -45,10 +47,30 @@ uv tool run --from huggingface-hub hf download \
   --local-dir ./models
 ```
 
-## Build & Run
+## Build
 
 ```sh
 docker compose build
+```
+
+The build copies source from the local `ds4/` submodule rather than cloning
+from GitHub at runtime. This makes the build **deterministic** — you always get
+the exact commit pinned in the submodule.
+
+### Updating the submodule
+
+```sh
+cd ds4
+git checkout <commit-hash>    # or pull latest
+cd ..
+git add ds4
+git commit -m "Update ds4 to <commit-hash>"
+git push                      # triggers your CI workflow
+```
+
+## Run
+
+```sh
 docker compose up -d
 ```
 
@@ -60,7 +82,7 @@ Edit `docker-compose.yml` to adjust:
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--ctx` | 262144 | Context window size (tokens) |
+| `--ctx` | 131072 | Context window size (tokens) |
 | `--prefill-chunk` | 4096 | Prompt prefill chunk size |
 
 ## Test
@@ -75,3 +97,14 @@ uv run --with openai python3 tests/test_api.py
 - Model ID exposed as `deepseek-v4-flash`
 - Supports OpenAI-compatible chat completions, tool calling, streaming
 - Thinking/reasoning supported via `reasoning_effort` parameter
+
+## Repository Structure
+
+```
+.
+├── Dockerfile          # Multi-stage ROCm build
+├── docker-compose.yml  # Service definition
+├── ds4/                # Git submodule (pinned source)
+├── models/             # Downloaded GGUF models (gitignored)
+└── tests/              # Benchmark and quality tests
+```
